@@ -41,4 +41,15 @@ class BowlingTest extends TestCase
         $this->assertEquals(12, $result);
     }
 
+    public function testStrikeScore(): void
+    {
+
+        $bowlingGame = new BowlingGame();
+        $rolls = array(10,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+
+        $result = $bowlingGame->score($rolls);
+
+        $this->assertEquals(14, $result);
+    }
+
 }

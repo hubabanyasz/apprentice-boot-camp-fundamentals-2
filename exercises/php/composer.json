@@ -4,6 +4,7 @@
   "autoload": {
     "psr-4": {
       "McrDigital\\PhpFundamentals2\\Bowling\\": "bowling/",
+      "McrDigital\\PhpFundamentals2\\Billing\\": "billing/",
       "McrDigital\\PhpFundamentals2\\Checkout\\": "checkout/",
       "McrDigital\\PhpFundamentals2\\Refactoring\\": "refactoring/"
     }

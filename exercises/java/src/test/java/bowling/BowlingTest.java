@@ -49,6 +49,20 @@ public class BowlingTest {
         // then
         assertThat(score).isEqualTo(12);
     }
+
+    @Test
+    public void givenRolls_whenStrike_thenScoreCorrectValue() {
+        // given
+        Bowling bowling = new Bowling();
+
+        // when
+        Integer[] rolls = {0, 0, 10, 1, 1, 0, 0, 0, 0, 0,
+                0, 0, 0, 10, 1, 1, 0, 0};
+        int score = bowling.score(rolls);
+
+        // then
+        assertThat(score).isEqualTo(28);
+    }
 }
 
 

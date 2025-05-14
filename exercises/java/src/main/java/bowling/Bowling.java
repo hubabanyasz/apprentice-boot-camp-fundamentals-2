@@ -1,13 +1,18 @@
 package bowling;
 
-import java.util.Arrays;
-import java.util.stream.Stream;
-
 public class Bowling {
     public int score(Integer[] rolls) {
 
-        Stream<Integer> stream = Arrays.stream(rolls);
+        int score = 0;
+        for (int i = 0; i < rolls.length; i += 2) {
+            int frame = rolls[i] + rolls[i + 1];
 
-        return stream.mapToInt(Integer::intValue).sum();
+            if (frame == 10) {
+                score += frame + rolls[i + 2];
+            } else {
+                score += frame;
+            }
+        }
+        return score;
     }
 }

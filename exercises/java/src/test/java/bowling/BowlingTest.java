@@ -35,7 +35,20 @@ public class BowlingTest {
         // then
         assertThat(score).isEqualTo(20);
     }
+
+    @Test
+    public void givenRolls_whenSpare_thenScoreCorrectValue() {
+        // given
+        Bowling bowling = new Bowling();
+
+        // when
+        Integer[] rolls = {5, 5, 1, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int score = bowling.score(rolls);
+
+        // then
+        assertThat(score).isEqualTo(12);
+    }
 }
 
-// Integer[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-// 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+

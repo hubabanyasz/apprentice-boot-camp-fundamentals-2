@@ -8,11 +8,11 @@ import java.nio.charset.StandardCharsets;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class ThingyTest {
+public class FizzBuzzTest {
 
     @Test
     public void itWorks() throws DecoderException {
-        assertThat(new Thingy().doTheThing().equals(new String(
+        assertThat(new FizzBuzz().doFizzBuzzUpTo100().equals(new String(
                 Hex.decodeHex(
                         "3120322046697a7a20342042757a7a2046697a7a203720382046697a7a2042757a7a203131" +
                                 "2046697a7a2031332031342046697a7a42757a7a2031362031372046697a7a2031392042757a7a204669" +

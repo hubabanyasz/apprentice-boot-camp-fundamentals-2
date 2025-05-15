@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.*;
 public class FizzBuzzTest {
 
     @Test
-    public void itWorks() throws DecoderException {
+    public void testFizzBuzz() throws DecoderException {
         assertThat(new FizzBuzz().doFizzBuzzUpTo100().equals(new String(
                 Hex.decodeHex(
                         "3120322046697a7a20342042757a7a2046697a7a203720382046697a7a2042757a7a203131" +

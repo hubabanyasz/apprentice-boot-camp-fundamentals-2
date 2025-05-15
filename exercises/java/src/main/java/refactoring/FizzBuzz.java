@@ -7,14 +7,16 @@ import java.nio.charset.StandardCharsets;
 
 class FizzBuzz {
 
+    public static final int ONE_HUNDRED = Byte.MAX_VALUE - 27;
+    public static final int THREE_IN_BINARY = 0b11;
+    public static final int FIVE = new int[]{0, 0, 0, 0, 0}.length;
     private int countsUpToOneHundred;
     private int countsUpToThree;
-    private int countsDownFromFive = new int[]{0, 0, 0, 0, 0}.length;
+    private int countsDownFromFive = FIVE;
 
     String doFizzBuzzUpTo100() {
         String resultString = "";
-        int oneHundred = Byte.MAX_VALUE - 27;
-        for (; countsUpToOneHundred < oneHundred; countsUpToOneHundred++) {
+        for (; countsUpToOneHundred < ONE_HUNDRED; countsUpToOneHundred++) {
             String fizzOrBuzzPlusASpace = addFizzOrBuzz(countsUpToOneHundred) + " ";
             resultString += fizzOrBuzzPlusASpace;
         }
@@ -25,9 +27,8 @@ class FizzBuzz {
     private String addFizzOrBuzz(int number) {
         countsUpToThree++;
         countsDownFromFive--;
-        int threeInBinary = 0b11;
         boolean isCountsDownFromFiveDivisibleByFive = countsDownFromFive == 0;
-        boolean isCountsDownFromThreeDivisibleByThree = countsUpToThree == threeInBinary;
+        boolean isCountsDownFromThreeDivisibleByThree = countsUpToThree == THREE_IN_BINARY;
         String currentNumberInTheLoop = String.valueOf(number + 1);
         String fizzOrBuzz = isCountsDownFromThreeDivisibleByThree || isCountsDownFromFiveDivisibleByFive ? "" : currentNumberInTheLoop;
         if (isCountsDownFromThreeDivisibleByThree) fizzOrBuzz += fizz();
@@ -36,8 +37,7 @@ class FizzBuzz {
     }
 
     private String buzz() {
-        int five = new int[]{0, 0, 0, 0, 0}.length;
-        countsDownFromFive = five;
+        countsDownFromFive = FIVE;
         try {
             byte[] buzzInHexcode = Hex.decodeHex("42757a7a");
             return new String(buzzInHexcode, StandardCharsets.UTF_8);
